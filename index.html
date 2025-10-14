@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belezzalexia - Votre Experte Beauté</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* VARIABLES (inchangées) */
+        :root {
+            --blanc-casse: #FAF8F4;
+            --lavande-primaire: #A78BFA;
+            --gris-fonce: #333333;
+            --noir-doux: #1A1A1A;
+            --blanc-pur: #FFFFFF;
+            --gris-clair: #EAEAEA;
+        }
+
+        /* BASE */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            background-color: var(--blanc-casse);
+            color: var(--gris-fonce);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- Header --- */
+        .header {
+            background-color: var(--lavande-primaire);
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header .logo-area {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+
+        .header .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--blanc-pur);
+        }
+
+        .header .brand-name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2em;
+            color: var(--blanc-pur);
+            margin-left: 15px;
+            
+        }
+
+        .header .nav-button {
+            background-color: var(--blanc-pur);
+            color: var(--lavande-primaire);
+            padding: 8px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-right: 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .header .nav-button:hover {
+            background-color: var(--gris-clair);
+        }
+
+        /* --- Main Navigation --- */
+        .main-nav {
+            background-color: var(--blanc-casse);
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .main-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap; 
+        }
+
+        .main-nav a {
+            background-color: var(--lavande-primaire);
+            color: var(--blanc-pur);
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            max-width: 200px;
+            white-space: nowrap; 
+        }
+
+        .main-nav a:hover {
+            background-color: #8E6FF5;
+        }
+
+        /* --- Hero Section --- */
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            background-color: var(--blanc-casse);
+        }
+
+        .hero-content {
+            flex: 1;
+            padding-right: 40px;
+            text-align: center;
+        }
+        .hero-content h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.8em;
+            color: var(--noir-doux);
+            margin-bottom: 20px;
+        }
+        .hero-content p {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.3em;
+            color: var(--gris-fonce);
+            line-height: 1.5;
+        }
+        .hero-content p strong {
+            color: var(--lavande-primaire);
+            font-weight: 700;
+        }
+        .hero-content .welcome-text {
+            font-family: 'Dancing Script', cursive;
+        }
+
+
+        .hero-image-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        /* MODIFICATION ICI : Taille de l'image */
+        .hero-image {
+            max-width: 60%; /* Réduit la taille de l'image à 60% de son conteneur */
+            height: auto; 
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+
+        /* --- Services Section --- */
+        .services-section {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: var(--blanc-casse);
+        }
+
+        .services-section h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5em;
+            color: var(--noir-doux);
+            margin-bottom: 50px;
+        }
+
+        .service-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .service-card {
+            background-color: var(--blanc-pur);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            width: 300px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .service-card h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8em;
+            color: var(--noir-doux);
+            margin: 20px 0 10px;
+        }
+        
+        .service-details {
+            padding: 0 15px 10px; 
+            text-align: center;
+        }
+
+        .service-details p {
+            margin: 5px 0;
+            font-size: 1em;
+            color: var(--gris-fonce);
+        }
+
+        /* Masque les détails par défaut sur desktop (la zone hover prend le relais) */
+        .service-card .service-details {
+            display: none;
+        }
+
+        /* Masque le bouton "Réserver" visible par défaut sur desktop, il est dans le hover-info */
+        .service-card > div[style] a.nav-button {
+            display: none;
+        }
+
+        /* Style de la zone de survol (pour DESKTOP) */
+        .service-card .hover-info {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(167, 139, 250, 0.95);
+            color: var(--blanc-pur);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            visibility: hidden;
+        }
+
+        /* Révèle la zone de survol au hover sur DESKTOP */
+        .service-card:hover .hover-info {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* --- Avis Clients Section --- */
+        .testimonials-section {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: var(--blanc-casse);
+        }
+
+        .testimonials-section h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5em;
+            color: var(--noir-doux);
+            margin-bottom: 50px;
+        }
+
+        .testimonial-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .testimonial-card {
+            background-color: var(--blanc-pur);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            width: 300px;
+            padding: 25px;
+            text-align: left;
+            transition: box-shadow 0.3s ease;
+        }
+        .testimonial-card:hover {
+            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+        }
+
+        .testimonial-card .stars {
+            color: var(--lavande-primaire);
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-card h3 {
+            font-size: 1.2em;
+            color: var(--noir-doux);
+            margin-bottom: 10px;
+        }
+
+        .testimonial-card p {
+            font-size: 0.9em;
+            color: var(--gris-fonce);
+            margin-bottom: 15px;
+        }
+
+        .testimonial-card .author {
+            font-weight: 600;
+            color: var(--noir-doux);
+            text-align: right;
+        }
+
+        /* --- Call to Action Section --- */
+        .cta-section {
+            background-color: var(--blanc-casse);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .cta-section .cta-button {
+            background-color: var(--lavande-primaire);
+            color: var(--blanc-pur);
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.4em;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .cta-section .cta-button:hover {
+            background-color: #8E6FF5;
+            transform: translateY(-2px);
+        }
+
+        /* --- Contact Section --- */
+        .contact-section {
+            background-color: var(--blanc-casse);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5em;
+            color: var(--noir-doux);
+            margin-bottom: 50px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            background-color: var(--blanc-pur);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            padding: 25px;
+            text-align: center;
+        }
+
+        .contact-item .icon {
+            color: var(--lavande-primaire);
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .contact-item h3 {
+            font-size: 1.2em;
+            color: var(--noir-doux);
+            margin-bottom: 10px;
+        }
+
+        .contact-item p {
+            font-size: 0.95em;
+            color: var(--gris-fonce);
+            line-height: 1.4;
+        }
+
+        .contact-item .map-placeholder {
+            width: 100%;
+            height: 150px;
+            background-color: var(--gris-clair);
+            border-radius: 5px;
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--gris-fonce);
+            font-size: 0.9em;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background-color: var(--lavande-primaire);
+            color: var(--blanc-pur);
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .footer .brand-name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .footer .social-icons a {
+            color: var(--blanc-pur);
+            font-size: 1.8em;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer .social-icons a:hover {
+            color: var(--gris-clair);
+        }
+
+        /* ========================================= */
+        /* === MEDIA QUERIES POUR LA RESPONSIVITÉ === */
+        /* ========================================= */
+
+        /* TABLETTES ET MOBILES (max-width: 768px) */
+        @media (max-width: 768px) {
+            
+            body {
+                font-size: 15px;
+            }
+            
+            /* HEADER: centrage et empilement */
+            .header {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px 0;
+            }
+            .header .logo-area {
+                margin-left: 0;
+                justify-content: center;
+            }
+            .header .nav-button {
+                margin-right: 0;
+                width: 80%;
+                text-align: center;
+            }
+            
+            /* NAVIGATION: Horizontal et ajusté */
+            .main-nav ul {
+                gap: 5px; 
+                flex-direction: row; 
+                padding: 0 10px;
+                justify-content: space-around; 
+            }
+            .main-nav a {
+                padding: 8px 15px; 
+                font-size: 0.9em;
+                flex-basis: auto;
+                max-width: none;
+                white-space: normal; 
+                text-align: center;
+            }
+
+            /* HERO SECTION: passage en colonne */
+            .hero-section {
+                flex-direction: column;
+                padding: 40px 20px;
+            }
+            .hero-content {
+                padding-right: 0;
+                order: 2;
+            }
+            .hero-content h1 {
+                font-size: 2em;
+            }
+            .hero-content p {
+                font-size: 1.1em;
+            }
+            .hero-image-wrapper {
+                order: 1;
+                margin-bottom: 30px;
+            }
+            .hero-image {
+                max-width: 100%; /* L'image reprend 100% de la largeur du conteneur sur mobile */
+            }
+            
+            /* CORRECTION CARD: Affichage des détails et bouton Réserver */
+            .service-cards {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .service-card {
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            /* Afficher les détails sous l'image sur mobile */
+            .service-card .service-details {
+                display: block;
+                padding-top: 0;
+            }
+            
+            /* Afficher le bouton Réserver permanent sur mobile */
+            .service-card > div[style] a.nav-button {
+                display: block;
+            }
+
+            /* Masquer la zone de survol, qui n'est pas utile sur tactile */
+            .service-card .hover-info {
+                display: none !important;
+            }
+
+            /* CONTACT: passage à une seule colonne */
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+        
+        /* Petits mobiles (max-width: 480px) */
+        @media (max-width: 480px) {
+            
+            .header .brand-name {
+                font-size: 1.5em;
+            
+            }
+            .header .logo {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .services-section,
+            .testimonials-section,
+            .contact-section {
+                padding: 40px 15px;
+            }
+
+            /* Ajustement très fins des boutons pour les plus petits écrans */
+            .main-nav a {
+                padding: 6px 10px;
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo-area">
+            <img src="images/dessin2.jpg" alt="Belezzalexia Logo" class="logo">
+             <span class="brand-name">Belezzalexia</span>
+        </div>
+        <a href="#" class="nav-button">RÉSERVER</a>
+    </header>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#">ACCUEIL</a></li>
+            <li><a href="#services-section">SERVICES</a></li>
+            <li><a href="#testimonials-section">AVIS</a></li>
+            <li><a href="#contact-section">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <p class="welcome-text">Bienvenue chez Belezzalexia.</p>
+            <h1>Un Regard, un Style, une Onglerie : La Signature Belezzalexia.</h1>
+            <p><strong>Alexia</strong> met son savoir-faire unique au service de votre beauté. Chaque prestation est pensée sur mesure, de la manucure parfaite aux cils spectaculaires, pour révéler la meilleure version de vous-même. Réservez votre moment d'exception.</p>
+        </div>
+        <div class="hero-image-wrapper">
+            <img src="images/pro.jpg" alt="Alexia réalisant une pose de cils" class="hero-image"> </div>
+    </section>
+
+    <section id="services-section" class="services-section container">
+        <h2>Nos Prestations</h2>
+        <div class="service-cards">
+            <div class="service-card">
+                <img src="images/americaine.jpg" alt="Pose Américaine"> 
+                <h3>Pose Américaine</h3>
+                
+                <div class="service-details">
+                    <p>Durée : Environ 1h15</p>
+                    <p>Tarif : À partir de 50€</p>
+                </div>
+
+                <div class="hover-info">
+                    <h4>Pose Américaine</h4>
+                    <p>Durée : Environ 1h15</p>
+                    <p>Tarif : À partir de 50€</p>
+                    <a href="#" class="nav-button" style="background-color: var(--blanc-pur); color: var(--lavande-primaire); margin-top: 15px;">Réserver</a>
+                </div>
+                
+         
+            </div>
+
+            <div class="service-card">
+                <img src="images/cils.jpg" alt="Extension de cils (russe)"> 
+                <h3>Extension de cils (russe)</h3>
+                
+                <div class="service-details">
+                    <p>Durée : Environ 2h00</p>
+                    <p>Tarif : À partir de 90€</p>
+                </div>
+                
+                <div class="hover-info">
+                    <h4>Extension de cils (russe)</h4>
+                    <p>Durée : Environ 2h00</p>
+                    <p>Tarif : À partir de 90€</p>
+                    <a href="#" class="nav-button" style="background-color: var(--blanc-pur); color: var(--lavande-primaire); margin-top: 15px;">Réserver</a>
+                </div>
+
+                
+            </div>
+
+            <div class="service-card">
+                <img src="images/pro.jpg" alt="Maquillage permanent"> 
+                <h3>Maquillage permanent</h3>
+                
+                <div class="service-details">
+                    <p>Durée : Environ 1h30</p>
+                    <p>Tarif : À partir de 150€</p>
+                </div>
+
+                <div class="hover-info">
+                    <h4>Maquillage permanent</h4>
+                    <p>Durée : Environ 1h30</p>
+                    <p>Tarif : À partir de 150€</p>
+                    <a href="#" class="nav-button" style="background-color: var(--blanc-pur); color: var(--lavande-primaire); margin-top: 15px;">Réserver</a>
+                </div>
+       
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials-section" class="testimonials-section container">
+        <h2>Avis clientes</h2>
+        <div class="testimonial-cards">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <h3>"Manucure parfaite et durable !"</h3>
+                <p>J'ai testé la pose américaine et le résultat est juste magnifique ! Les ongles tiennent super bien et la finition est impeccable. Alexia est très minutieuse et professionnelle. Je suis ravie, j'ai trouvé mon salon !</p>
+                <div class="author">— Sophie L.</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <h3>"Regard sublimé avec les cils Volume Russe !"</h3>
+                <p>Je suis bluffée par le travail d'Alexia sur mes extensions de cils. Le Volume Russe est incroyable, mes cils sont fournis et naturels à la fois. L'ambiance est détendue et Alexia est très douce. Je recommande à 100% !</p>
+                <div class="author">— Clara M.</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <h3>"Professionnalisme et gentillesse exceptionnels !"</h3>
+                <p>J'ai fait mon maquillage permanent des sourcils chez Belezzalexia et le résultat dépasse mes attentes. Alexia est à l'écoute, très rassurante et son travail est d'une précision folle. C'est un vrai moment de bien-être, en plus d'un résultat au top.</p>
+                <div class="author">— Émilie V.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <a href="#" class="cta-button">RÉSERVER VOTRE MOMENT BEAUTÉ</a>
+    </section>
+
+    <section id="contact-section" class="contact-section container">
+        <h2>Contactez Belezzalexia</h2>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <div class="icon">📍</div>
+                <h3>Adresse</h3>
+                <p>17 Rue des Boursières<br>81100 Castres</p>
+                <div class="map-placeholder">Plan de la ville (placeholder)</div>
+            </div>
+            <div class="contact-item">
+                <div class="icon">⏰</div>
+                <h3>Horaires</h3>
+                <p>Lundi : Fermé</p>
+                <p>Mardi - Mercredi : 10h00 - 18h30</p>
+                <p>Jeudi - Vendredi : 10h00 - 19h00</p>
+                <p>Samedi : 09h30 - 16h00</p>
+                <p>Dimanche : Fermé</p>
+            </div>
+            <div class="contact-item">
+                <div class="icon">📧</div>
+                <h3>Contact</h3>
+                <p>Email: contact@belezzalexia.fr</p>
+                <p>Téléphone: 01 23 45 67 89</p>
+                </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="brand-name">Belezzalexia</div>
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank">f</a> <a href="https://instagram.com" target="_blank">📸</a> </div>
+    </footer>
+
+</body>
+</html>
