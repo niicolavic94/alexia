@@ -1,1 +1,13 @@
-reservation et galerie à améliorer 
+reservation et galerie à améliorer ! fait ^^ 
+
+a vérifier cohérence de toutes les pages : 
+bouton accueil en haut à droite 
+ordre de la nav 
+lightweb ( insta grille ) 
+systeme de réservation : 
+site permettant l'envoi par email
+sécurité du formulaire 
+plage horaire ou non ? voir ac alexia 
+systeme de confirmation de rdv ^^ 
+rappel au client du rdv ? email , sms ? 
+

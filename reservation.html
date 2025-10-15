@@ -8,6 +8,46 @@
   <link rel="stylesheet" href="style.css">
 
   <style>
+
+    .tarifs {
+  max-width: 900px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.tarif-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.card {
+  background-color:  #A78BFA;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  width: 200px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  color: whitesmoke;
+}
+
+.card p {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
     .contact-form {
   max-width: 600px;
   margin: 2rem auto;
@@ -46,7 +86,7 @@
 .contact-form button {
   margin-top: 1rem;
   align-self: center;
-  background-color: #d4a373;
+  background-color:  #A78BFA;
   color: white;
   font-weight: 600;
   border: none;
@@ -77,17 +117,9 @@
       <img src="images/dessin2.jpg" alt="Logo Belezzalexia" class="logo">
       <span class="brand-name">Belezzalexia</span>
     </div>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="index.html">ACCUEIL</a></li>
-        <li><a href="index.html#services-section">SERVICES</a></li>
-        <li><a href="galerie.html">GALERIE</a></li>
-        <li><a href="index.html#testimonials-section">AVIS</a></li>
-        <li><a href="reservation.html" class="active">RÉSERVATION</a></li>
-        <li><a href="index.html#contact-section">CONTACT</a></li>
-      </ul>
-    </nav>
+    <nav><a href="index.html" class="nav-button">Accueil</a></nav>
   </header>
+
 
   <!-- Section principale -->
   <main class="container">
@@ -99,6 +131,30 @@
          <strong>Email :</strong> <a href="mailto:contact@belezzalexia.fr">contact@belezzalexia.fr</a></p>
       <p>Ou réservez directement via le formulaire ci-dessous :</p>
     </div>
+<section class="tarifs">
+<!-- Section Tarifs -->
+<section class="tarifs">
+  <h2>Nos tarifs</h2>
+  <div class="tarif-cards">
+    <div class="card">
+      <h3>Pose américaine</h3>
+      <p>50€</p>
+    </div>
+    <div class="card">
+      <h3>Extension de cils</h3>
+      <p>70€</p>
+    </div>
+    <div class="card">
+      <h3>Maquillage permanent</h3>
+      <p>120€</p>
+    </div>
+    <div class="card">
+      <h3>Autre / Conseil</h3>
+      <p>Sur devis</p>
+    </div>
+  </div>
+</section>
+
 
     <!-- Formulaire de réservation -->
     <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
