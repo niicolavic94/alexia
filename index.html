@@ -3,12 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belezzalexia - Votre Experte Beauté</title>
+    <meta name="description" content="Belezzalexia à Castres : salon de beauté spécialisé en pose américaine, extensions de cils volume russe et maquillage permanent. Prenez rendez-vous avec Alexia, experte beauté.">
+    <meta name="keywords" content="manucure Castres, extensions cils Castres, maquillage permanent, pose américaine, volume russe, onglerie Castres">
+    <meta name="author" content="Belezzalexia">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Belezzalexia - Votre Experte Beauté à Castres">
+    <meta property="og:description" content="Salon de beauté à Castres spécialisé en manucure, extensions de cils et maquillage permanent">
+    <meta property="og:url" content="https://www.belezzalexia.fr">
+    
+    <title>Belezzalexia - Salon de Beauté à Castres | Manucure, Cils, Maquillage Permanent</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    
     <style>
-        /* VARIABLES (inchangées) */
+        /* VARIABLES */
         :root {
             --blanc-casse: #FAF8F4;
             --lavande-primaire: #A78BFA;
@@ -19,6 +32,10 @@
         }
 
         /* BASE */
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Montserrat', sans-serif;
             margin: 0;
@@ -27,13 +44,35 @@
             line-height: 1.6;
         }
 
+        /* Skip to content pour accessibilité */
+        .skip-to-content {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--lavande-primaire);
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 100;
+        }
+        
+        .skip-to-content:focus {
+            top: 0;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
 
-        /* --- Header --- */
+        /* Focus visible pour accessibilité clavier */
+        a:focus, button:focus {
+            outline: 3px solid var(--lavande-primaire);
+            outline-offset: 2px;
+        }
+
+        /* Header */
         .header {
             background-color: var(--lavande-primaire);
             padding: 10px 0;
@@ -62,7 +101,6 @@
             font-size: 2em;
             color: var(--blanc-pur);
             margin-left: 15px;
-            
         }
 
         .header .nav-button {
@@ -75,11 +113,13 @@
             margin-right: 20px;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
-        .header .nav-button:hover {
+        
+        .header .nav-button:hover,
+        .header .nav-button:focus {
             background-color: var(--gris-clair);
         }
 
-        /* --- Main Navigation --- */
+        /* Main Navigation */
         .main-nav {
             background-color: var(--blanc-casse);
             padding: 15px 0;
@@ -94,7 +134,7 @@
             display: flex;
             justify-content: center;
             gap: 20px;
-            flex-wrap: wrap; 
+            flex-wrap: wrap;
         }
 
         .main-nav a {
@@ -104,17 +144,19 @@
             border-radius: 5px;
             text-decoration: none;
             font-weight: 600;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             max-width: 200px;
-            white-space: nowrap; 
+            white-space: nowrap;
         }
 
-        .main-nav a:hover {
+        .main-nav a:hover,
+        .main-nav a:focus {
             background-color: #8E6FF5;
+            transform: translateY(-2px);
         }
 
-        /* --- Hero Section --- */
+        /* Hero Section */
         .hero-section {
             display: flex;
             align-items: center;
@@ -128,44 +170,48 @@
             padding-right: 40px;
             text-align: center;
         }
+        
         .hero-content h1 {
             font-family: 'Dancing Script', cursive;
             font-size: 2.8em;
             color: var(--noir-doux);
             margin-bottom: 20px;
         }
+        
         .hero-content p {
             font-family: 'Dancing Script', cursive;
             font-size: 1.3em;
             color: var(--gris-fonce);
             line-height: 1.5;
         }
+        
         .hero-content p strong {
             color: var(--lavande-primaire);
             font-weight: 700;
         }
+        
         .hero-content .welcome-text {
             font-family: 'Dancing Script', cursive;
         }
-
 
         .hero-image-wrapper {
             flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            
         }
 
-        /* MODIFICATION ICI : Taille de l'image */
+        /* AMÉLIORATION : Image de présentation agrandie */
         .hero-image {
-            max-width: 60%; /* Réduit la taille de l'image à 60% de son conteneur */
-            height: auto; 
+            max-width: 80%; 
+            height: 500px;
+            width: 500px;
+            object-fit: cover;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.15);
         }
 
-        /* --- Services Section --- */
+        /* Services Section */
         .services-section {
             padding: 80px 20px;
             text-align: center;
@@ -186,82 +232,108 @@
             flex-wrap: wrap;
         }
 
+        /* AMÉLIORATION : Cartes avec effet flip 3D */
         .service-card {
-            background-color: var(--blanc-pur);
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            background-color: transparent;
             width: 300px;
-            overflow: hidden;
-            position: relative;
-            transition: transform 0.3s ease;
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
+            height: 400px;
+            perspective: 1000px;
+            cursor: pointer;
         }
 
-        .service-card img {
+        .service-card-inner {
+            position: relative;
             width: 100%;
-            height: 200px;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .service-card:hover .service-card-inner,
+        .service-card:focus-within .service-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .service-card-front,
+        .service-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .service-card-front {
+            background-color: var(--blanc-pur);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card-front img {
+            width: 100%;
+            height: 250px;
             object-fit: cover;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
         }
 
-        .service-card h3 {
+        .service-card-front h3 {
             font-family: 'Dancing Script', cursive;
             font-size: 1.8em;
             color: var(--noir-doux);
             margin: 20px 0 10px;
-        }
-        
-        .service-details {
-            padding: 0 15px 10px; 
-            text-align: center;
+            padding: 0 15px;
         }
 
-        .service-details p {
-            margin: 5px 0;
-            font-size: 1em;
-            color: var(--gris-fonce);
-        }
-
-        /* Masque les détails par défaut sur desktop (la zone hover prend le relais) */
-        .service-card .service-details {
-            display: none;
-        }
-
-        /* Masque le bouton "Réserver" visible par défaut sur desktop, il est dans le hover-info */
-        .service-card > div[style] a.nav-button {
-            display: none;
-        }
-
-        /* Style de la zone de survol (pour DESKTOP) */
-        .service-card .hover-info {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(167, 139, 250, 0.95);
+        .service-card-back {
+            background: linear-gradient(135deg, var(--lavande-primaire) 0%, #8E6FF5 100%);
             color: var(--blanc-pur);
+            transform: rotateY(180deg);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 20px;
-            box-sizing: border-box;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            visibility: hidden;
+            padding: 30px;
         }
 
-        /* Révèle la zone de survol au hover sur DESKTOP */
-        .service-card:hover .hover-info {
-            opacity: 1;
-            visibility: visible;
+        .service-card-back h4 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5em;
+            margin-bottom: 5px;
         }
-        
-        /* --- Avis Clients Section --- */
+
+        .service-card-back p {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+
+        .service-card-back .nav-button {
+            background-color: var(--blanc-pur);
+            color: var(--lavande-primaire);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .service-card-back .nav-button:hover,
+        .service-card-back .nav-button:focus {
+            background-color: var(--gris-clair);
+            transform: translateY(-2px);
+        }
+
+        /* Masquer les anciennes classes de détails */
+        .service-details,
+        .hover-info {
+            display: none;
+        }
+
+        /* Testimonials Section */
         .testimonials-section {
             padding: 80px 20px;
             text-align: center;
@@ -289,10 +361,13 @@
             width: 300px;
             padding: 25px;
             text-align: left;
-            transition: box-shadow 0.3s ease;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
         }
-        .testimonial-card:hover {
+        
+        .testimonial-card:hover,
+        .testimonial-card:focus-within {
             box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
         }
 
         .testimonial-card .stars {
@@ -319,7 +394,7 @@
             text-align: right;
         }
 
-        /* --- Call to Action Section --- */
+        /* Call to Action Section */
         .cta-section {
             background-color: var(--blanc-casse);
             padding: 60px 20px;
@@ -336,14 +411,16 @@
             font-weight: 600;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             transition: background-color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
         }
 
-        .cta-section .cta-button:hover {
+        .cta-section .cta-button:hover,
+        .cta-section .cta-button:focus {
             background-color: #8E6FF5;
             transform: translateY(-2px);
         }
 
-        /* --- Contact Section --- */
+        /* Contact Section */
         .contact-section {
             background-color: var(--blanc-casse);
             padding: 80px 20px;
@@ -366,7 +443,7 @@
         }
 
         .contact-item {
-            background-color: var(--blanc-pur);
+            background-color: var(--lavande-primaire);
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             padding: 25px;
@@ -374,37 +451,47 @@
         }
 
         .contact-item .icon {
-            color: var(--lavande-primaire);
+            color: var(--blanc-pur);
             font-size: 2em;
             margin-bottom: 15px;
         }
 
         .contact-item h3 {
             font-size: 1.2em;
-            color: var(--noir-doux);
+            color: white;
             margin-bottom: 10px;
         }
 
         .contact-item p {
             font-size: 0.95em;
-            color: var(--gris-fonce);
+            color: white;
             line-height: 1.4;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .contact-item a:hover,
+        .contact-item a:focus {
+            color: var(--gris-clair);
         }
 
         .contact-item .map-placeholder {
             width: 100%;
             height: 150px;
-            background-color: var(--gris-clair);
+            background-color: rgba(255,255,255,0.2);
             border-radius: 5px;
             margin-top: 15px;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: var(--gris-fonce);
+            color: var(--blanc-pur);
             font-size: 0.9em;
         }
 
-        /* --- Footer --- */
+        /* Footer */
         .footer {
             background-color: var(--lavande-primaire);
             color: var(--blanc-pur);
@@ -420,124 +507,201 @@
 
         .footer .social-icons a {
             color: var(--blanc-pur);
-            font-size: 1.8em;
             margin: 0 10px;
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: opacity 0.3s ease;
+            display: inline-block;
         }
 
-        .footer .social-icons a:hover {
-            color: var(--gris-clair);
+        .footer .social-icons .social-icon-img {
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+            filter: brightness(0) invert(1);
         }
 
-        /* ========================================= */
-        /* === MEDIA QUERIES POUR LA RESPONSIVITÉ === */
-        /* ========================================= */
+        .footer .social-icons a:hover .social-icon-img,
+        .footer .social-icons a:focus .social-icon-img {
+            opacity: 0.7;
+        }
 
-        /* TABLETTES ET MOBILES (max-width: 768px) */
+        /* Bannière RGPD */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--noir-doux);
+            color: var(--blanc-pur);
+            padding: 20px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: none;
+        }
+
+        .cookie-banner.show {
+            display: block;
+        }
+
+        .cookie-banner .cookie-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .cookie-banner p {
+            margin: 0;
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .cookie-banner .cookie-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .cookie-banner button {
+            background-color: var(--lavande-primaire);
+            color: var(--blanc-pur);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .cookie-banner button:hover,
+        .cookie-banner button:focus {
+            background-color: #8E6FF5;
+        }
+
+        .cookie-banner .reject-btn {
+            background-color: transparent;
+            border: 1px solid var(--blanc-pur);
+        }
+
+        .cookie-banner .reject-btn:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        /* MEDIA QUERIES */
         @media (max-width: 768px) {
             
             body {
                 font-size: 15px;
             }
             
-            /* HEADER: centrage et empilement */
             .header {
                 flex-direction: column;
                 gap: 10px;
                 padding: 15px 0;
             }
+            
             .header .logo-area {
                 margin-left: 0;
                 justify-content: center;
             }
+            
             .header .nav-button {
                 margin-right: 0;
                 width: 80%;
                 text-align: center;
             }
             
-            /* NAVIGATION: Horizontal et ajusté */
             .main-nav ul {
-                gap: 5px; 
-                flex-direction: row; 
+                gap: 5px;
+                flex-direction: row;
                 padding: 0 10px;
-                justify-content: space-around; 
+                justify-content: space-around;
             }
+            
             .main-nav a {
-                padding: 8px 15px; 
+                padding: 8px 15px;
                 font-size: 0.9em;
                 flex-basis: auto;
                 max-width: none;
-                white-space: normal; 
+                white-space: normal;
                 text-align: center;
             }
 
-            /* HERO SECTION: passage en colonne */
             .hero-section {
                 flex-direction: column;
                 padding: 40px 20px;
             }
+            
             .hero-content {
                 padding-right: 0;
                 order: 2;
             }
+            
             .hero-content h1 {
                 font-size: 2em;
             }
+            
             .hero-content p {
                 font-size: 1.1em;
             }
+            
             .hero-image-wrapper {
                 order: 1;
                 margin-bottom: 30px;
             }
+            
             .hero-image {
-                max-width: 100%; /* L'image reprend 100% de la largeur du conteneur sur mobile */
+                max-width: 100%;
+                height: auto;
             }
             
-            /* CORRECTION CARD: Affichage des détails et bouton Réserver */
-            .service-cards {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
+            /* Désactiver l'effet flip sur mobile - affichage simple */
             .service-card {
-                width: 100%;
-                max-width: 400px;
-                margin: 0 auto;
+                height: auto;
+                perspective: none;
             }
 
-            /* Afficher les détails sous l'image sur mobile */
-            .service-card .service-details {
-                display: block;
-                padding-top: 0;
-            }
-            
-            /* Afficher le bouton Réserver permanent sur mobile */
-            .service-card > div[style] a.nav-button {
-                display: block;
+            .service-card-inner {
+                transform: none !important;
+                position: static;
             }
 
-            /* Masquer la zone de survol, qui n'est pas utile sur tactile */
-            .service-card .hover-info {
-                display: none !important;
+            .service-card-front,
+            .service-card-back {
+                position: static;
+                backface-visibility: visible;
             }
 
-            /* CONTACT: passage à une seule colonne */
+            .service-card-back {
+                transform: none;
+                margin-top: 15px;
+                border-radius: 10px;
+                padding: 20px;
+            }
+
             .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
+
+            .cookie-banner .cookie-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cookie-banner .cookie-buttons {
+                width: 100%;
+                justify-content: center;
+            }
         }
         
-        /* Petits mobiles (max-width: 480px) */
         @media (max-width: 480px) {
-            
             .header .brand-name {
                 font-size: 1.5em;
-            
             }
+            
             .header .logo {
                 width: 40px;
                 height: 40px;
@@ -549,164 +713,339 @@
                 padding: 40px 15px;
             }
 
-            /* Ajustement très fins des boutons pour les plus petits écrans */
             .main-nav a {
                 padding: 6px 10px;
                 font-size: 0.8em;
             }
         }
+
+        /* Mode à fort contraste pour accessibilité */
+        @media (prefers-contrast: high) {
+            .header .nav-button,
+            .main-nav a,
+            .cta-button {
+                border: 2px solid currentColor;
+            }
+        }
+
+        /* Réduction de mouvement pour accessibilité */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Lien d'évitement pour accessibilité -->
+    <a href="#main-content" class="skip-to-content">Aller au contenu principal</a>
 
-    <header class="header">
+    <header class="header" role="banner">
         <div class="logo-area">
-            <img src="images/dessin2.jpg" alt="Belezzalexia Logo" class="logo">
-             <span class="brand-name">Belezzalexia</span>
+            <img src="images/dessin2.jpg" alt="Logo Belezzalexia" class="logo">
+            <span class="brand-name">Belezzalexia</span>
         </div>
-        <a href="#" class="nav-button">RÉSERVER</a>
+        <a href="#contact-section" class="nav-button" aria-label="Réserver un rendez-vous">RÉSERVER</a>
     </header>
 
-    <nav class="main-nav">
+    <nav class="main-nav" role="navigation" aria-label="Navigation principale">
         <ul>
-            <li><a href="#">ACCUEIL</a></li>
+            <li><a href="#main-content">ACCUEIL</a></li>
             <li><a href="#services-section">SERVICES</a></li>
             <li><a href="#testimonials-section">AVIS</a></li>
             <li><a href="#contact-section">CONTACT</a></li>
         </ul>
     </nav>
 
-    <section class="hero-section">
-        <div class="hero-content">
-            <p class="welcome-text">Bienvenue chez Belezzalexia.</p>
-            <h1>Un Regard, un Style, une Onglerie : La Signature Belezzalexia.</h1>
-            <p><strong>Alexia</strong> met son savoir-faire unique au service de votre beauté. Chaque prestation est pensée sur mesure, de la manucure parfaite aux cils spectaculaires, pour révéler la meilleure version de vous-même. Réservez votre moment d'exception.</p>
-        </div>
-        <div class="hero-image-wrapper">
-            <img src="images/pro.jpg" alt="Alexia réalisant une pose de cils" class="hero-image"> </div>
-    </section>
+    <main id="main-content">
+        <section class="hero-section" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <p class="welcome-text">Bienvenue chez Belezzalexia.</p>
+                <h1 id="hero-title">Un Regard, un Style, une Onglerie : La Signature Belezzalexia.</h1>
+                <p><strong>Alexia</strong> met son savoir-faire unique au service de votre beauté. Chaque prestation est pensée sur mesure, de la manucure parfaite aux cils spectaculaires, pour révéler la meilleure version de vous-même. Réservez votre moment d'exception.</p>
+            </div>
+            <div class="hero-image-wrapper">
+                <img src="images/pro.jpg" alt="Alexia, professionnelle de la beauté, réalisant une pose de cils sur une cliente" class="hero-image">
+            </div>
+        </section>
 
-    <section id="services-section" class="services-section container">
-        <h2>Nos Prestations</h2>
-        <div class="service-cards">
-            <div class="service-card">
-                <img src="images/americaine.jpg" alt="Pose Américaine"> 
-                <h3>Pose Américaine</h3>
+        <section id="services-section" class="services-section container" aria-labelledby="services-title">
+            <h2 id="services-title">Nos Prestations</h2>
+            <div class="service-cards">
                 
-                <div class="service-details">
-                    <p>Durée : Environ 1h15</p>
-                    <p>Tarif : À partir de 50€</p>
-                </div>
+                <article class="service-card" tabindex="0" aria-label="Service Pose Américaine">
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <img src="images/americaine.jpg" alt="Résultat d'une pose américaine sur ongles">
+                            <h3>Pose Américaine</h3>
+                        </div>
+                        <div class="service-card-back">
+                            <h4>Pose Américaine</h4>
+                            <p style="font-size: 0.75em; margin-bottom: 5px;">Sublimez vos ongles avec notre pose américaine élégante. Une manucure raffinée alliant french classique et gel résistant pour des mains impeccables pendant plusieurs semaines.</p>
+                            <p><strong>Durée :</strong> Environ 1h15</p>
+                            <p><strong>Tarif :</strong> À partir de 50€</p>
+                            <a href="#contact-section" class="nav-button" aria-label="Réserver une pose américaine">Réserver</a>
+                        </div>
+                    </div>
+                </article>
 
-                <div class="hover-info">
-                    <h4>Pose Américaine</h4>
-                    <p>Durée : Environ 1h15</p>
-                    <p>Tarif : À partir de 50€</p>
-                    <a href="#" class="nav-button" style="background-color: var(--blanc-pur); color: var(--lavande-primaire); margin-top: 15px;">Réserver</a>
-                </div>
-                
-         
+                <article class="service-card" tabindex="0" aria-label="Service Extension de cils">
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <img src="images/cils.jpg" alt="Extension de cils volume russe">
+                            <h3>Extension de cils (russe)</h3>
+                        </div>
+                        <div class="service-card-back">
+                            <h4>Extension de cils</h4>
+                            <p style="font-size: 0.75em; margin-bottom: 5px;">Révélez l'intensité de votre regard avec nos extensions cils volume russe. Technique ultra-précise pour un effet fourni et naturel qui sublime vos yeux sans les alourdir.</p>
+                            <p><strong>Durée :</strong> Environ 2h00</p>
+                            <p><strong>Tarif :</strong> À partir de 90€</p>
+                            <a href="#contact-section" class="nav-button" aria-label="Réserver une extension de cils">Réserver</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="service-card" tabindex="0" aria-label="Service Maquillage permanent">
+                    <div class="service-card-inner">
+                        <div class="service-card-front">
+                            <img src="images/pro.jpg" alt="Maquillage permanent des sourcils">
+                            <h3>Maquillage permanent</h3>
+                        </div>
+                        <div class="service-card-back">
+                            <h4>Maquillage permanent</h4>
+                            <p style="font-size: 0.75em; margin-bottom: 5px;">Gagnez du temps chaque matin avec notre maquillage permanent. Sourcils, eye-liner ou lèvres redessinés avec précision pour un résultat naturel et harmonieux qui dure des années.</p>
+                            <p><strong>Durée :</strong> Environ 1h30</p>
+                            <p><strong>Tarif :</strong> À partir de 150€</p>
+                            <a href="#contact-section" class="nav-button" aria-label="Réserver un maquillage permanent">Réserver</a>
+                        </div>
+                    </div>
+                </article>
             </div>
+        </section>
 
-            <div class="service-card">
-                <img src="images/cils.jpg" alt="Extension de cils (russe)"> 
-                <h3>Extension de cils (russe)</h3>
-                
-                <div class="service-details">
-                    <p>Durée : Environ 2h00</p>
-                    <p>Tarif : À partir de 90€</p>
-                </div>
-                
-                <div class="hover-info">
-                    <h4>Extension de cils (russe)</h4>
-                    <p>Durée : Environ 2h00</p>
-                    <p>Tarif : À partir de 90€</p>
-                    <a href="#" class="nav-button" style="background-color: var(--blanc-pur); color: var(--lavande-primaire); margin-top: 15px;">Réserver</a>
-                </div>
+<section class="cta-section" aria-label="Appel à l'action">
+            <a href="#contact-section" class="cta-button">RÉSERVER VOTRE MOMENT BEAUTÉ</a>
+        </section>
 
-                
+
+        <section id="testimonials-section" class="testimonials-section container" aria-labelledby="testimonials-title">
+            <h2 id="testimonials-title">Avis clientes</h2>
+            <div class="testimonial-cards">
+                <article class="testimonial-card">
+                    <div class="stars" aria-label="Note 5 étoiles sur 5">★★★★★</div>
+                    <h3>"Manucure parfaite et durable !"</h3>
+                    <p>J'ai testé la pose américaine et le résultat est juste magnifique ! Les ongles tiennent super bien et la finition est impeccable. Alexia est très minutieuse et professionnelle. Je suis ravie, j'ai trouvé mon salon !</p>
+                    <div class="author">— Sophie L.</div>
+                </article>
+                <article class="testimonial-card">
+                    <div class="stars" aria-label="Note 5 étoiles sur 5">★★★★★</div>
+                    <h3>"Regard sublimé avec les cils Volume Russe !"</h3>
+                    <p>Je suis bluffée par le travail d'Alexia sur mes extensions de cils. Le Volume Russe est incroyable, mes cils sont fournis et naturels à la fois. L'ambiance est détendue et Alexia est très douce. Je recommande à 100% !</p>
+                    <div class="author">— Clara M.</div>
+                </article>
+                <article class="testimonial-card">
+                    <div class="stars" aria-label="Note 5 étoiles sur 5">★★★★★</div>
+                    <h3>"Professionnalisme et gentillesse exceptionnels !"</h3>
+                    <p>J'ai fait mon maquillage permanent des sourcils chez Belezzalexia et le résultat dépasse mes attentes. Alexia est à l'écoute, très rassurante et son travail est d'une précision folle. C'est un vrai moment de bien-être, en plus d'un résultat au top.</p>
+                    <div class="author">— Émilie V.</div>
+                </article>
             </div>
+        </section>
 
-            <div class="service-card">
-                <img src="images/pro.jpg" alt="Maquillage permanent"> 
-                <h3>Maquillage permanent</h3>
-                
-                <div class="service-details">
-                    <p>Durée : Environ 1h30</p>
-                    <p>Tarif : À partir de 150€</p>
-                </div>
+        
 
-                <div class="hover-info">
-                    <h4>Maquillage permanent</h4>
-                    <p>Durée : Environ 1h30</p>
-                    <p>Tarif : À partir de 150€</p>
-                    <a href="#" class="nav-button" style="background-color: var(--blanc-pur); color: var(--lavande-primaire); margin-top: 15px;">Réserver</a>
-                </div>
-       
+        <section id="contact-section" class="contact-section container" aria-labelledby="contact-title">
+            <h2 id="contact-title">Contactez Belezzalexia</h2>
+            <div class="contact-grid">
+                <article class="contact-item">
+                    <div class="icon" aria-hidden="true">📍</div>
+                    <h3>Adresse</h3>
+                    <p>17 Rue des Boursiers
+                        81100 Castres</p>
+                        
+                    
+                    <div class="map-placeholder">Plan de la ville (placeholder)</div>
+                </article>
+                <article class="contact-item">
+                    <div class="icon" aria-hidden="true">⏰</div>
+                    <h3>Horaires</h3>
+                    <p>Lundi : Fermé</p>
+                    <p>Mardi - Mercredi : 10h00 - 18h30</p>
+                    <p>Jeudi - Vendredi : 10h00 - 19h00</p>
+                    <p>Samedi : 09h30 - 16h00</p>
+                    <p>Dimanche : Fermé</p>
+                </article>
+                <article class="contact-item">
+                    <div class="icon" aria-hidden="true">📧</div>
+                    <h3>Contact</h3>
+                    <p>Email: <a href="mailto:contact@belezzalexia.fr">contact@belezzalexia.fr</a></p>
+                    <p>Téléphone: <a href="tel:+33123456789">01 23 45 67 89</a></p>
+                </article>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <section id="testimonials-section" class="testimonials-section container">
-        <h2>Avis clientes</h2>
-        <div class="testimonial-cards">
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <h3>"Manucure parfaite et durable !"</h3>
-                <p>J'ai testé la pose américaine et le résultat est juste magnifique ! Les ongles tiennent super bien et la finition est impeccable. Alexia est très minutieuse et professionnelle. Je suis ravie, j'ai trouvé mon salon !</p>
-                <div class="author">— Sophie L.</div>
-            </div>
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <h3>"Regard sublimé avec les cils Volume Russe !"</h3>
-                <p>Je suis bluffée par le travail d'Alexia sur mes extensions de cils. Le Volume Russe est incroyable, mes cils sont fournis et naturels à la fois. L'ambiance est détendue et Alexia est très douce. Je recommande à 100% !</p>
-                <div class="author">— Clara M.</div>
-            </div>
-            <div class="testimonial-card">
-                <div class="stars">★★★★★</div>
-                <h3>"Professionnalisme et gentillesse exceptionnels !"</h3>
-                <p>J'ai fait mon maquillage permanent des sourcils chez Belezzalexia et le résultat dépasse mes attentes. Alexia est à l'écoute, très rassurante et son travail est d'une précision folle. C'est un vrai moment de bien-être, en plus d'un résultat au top.</p>
-                <div class="author">— Émilie V.</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-section">
-        <a href="#" class="cta-button">RÉSERVER VOTRE MOMENT BEAUTÉ</a>
-    </section>
-
-    <section id="contact-section" class="contact-section container">
-        <h2>Contactez Belezzalexia</h2>
-        <div class="contact-grid">
-            <div class="contact-item">
-                <div class="icon">📍</div>
-                <h3>Adresse</h3>
-                <p>17 Rue des Boursières<br>81100 Castres</p>
-                <div class="map-placeholder">Plan de la ville (placeholder)</div>
-            </div>
-            <div class="contact-item">
-                <div class="icon">⏰</div>
-                <h3>Horaires</h3>
-                <p>Lundi : Fermé</p>
-                <p>Mardi - Mercredi : 10h00 - 18h30</p>
-                <p>Jeudi - Vendredi : 10h00 - 19h00</p>
-                <p>Samedi : 09h30 - 16h00</p>
-                <p>Dimanche : Fermé</p>
-            </div>
-            <div class="contact-item">
-                <div class="icon">📧</div>
-                <h3>Contact</h3>
-                <p>Email: contact@belezzalexia.fr</p>
-                <p>Téléphone: 01 23 45 67 89</p>
-                </div>
-        </div>
-    </section>
-
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="brand-name">Belezzalexia</div>
         <div class="social-icons">
-            <a href="https://facebook.com" target="_blank">f</a> <a href="https://instagram.com" target="_blank">📸</a> </div>
+            <a href="https://www.facebook.com/VotrePageBelezzalexia" target="_blank" rel="noopener noreferrer" aria-label="Visitez notre page Facebook">
+                <img src="images/facebook.png" alt="" class="social-icon-img" aria-hidden="true">
+                <span class="sr-only">Facebook</span>
+            </a>
+            <a href="https://www.instagram.com/VotreCompteBelezzalexia" target="_blank" rel="noopener noreferrer" aria-label="Visitez notre compte Instagram">
+                <img src="images/instagram.png" alt="" class="social-icon-img" aria-hidden="true">
+                <span class="sr-only">Instagram</span>
+            </a>
+        </div>
+        <p style="margin-top: 15px; font-size: 0.9em;">
+            <a href="#" style="color: white; text-decoration: underline;" onclick="showPrivacyPolicy(); return false;">Politique de confidentialité</a> | 
+            <a href="#" style="color: white; text-decoration: underline;" onclick="showCookieBanner(); return false;">Gestion des cookies</a>
+        </p>
+        <p style="margin-top: 10px; font-size: 0.85em;">© 2025 Belezzalexia - Tous droits réservés</p>
     </footer>
 
+    <!-- Bannière RGPD pour les cookies -->
+    <div class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-desc">
+        <div class="cookie-content">
+            <div>
+                <h3 id="cookie-title" style="margin: 0 0 10px 0; font-size: 1.1em;">Gestion des cookies</h3>
+                <p id="cookie-desc">Nous utilisons des cookies pour améliorer votre expérience sur notre site. En continuant votre navigation, vous acceptez l'utilisation de cookies conformément à notre politique de confidentialité.</p>
+            </div>
+            <div class="cookie-buttons">
+                <button onclick="rejectCookies()" class="reject-btn" aria-label="Refuser les cookies">Refuser</button>
+                <button onclick="acceptCookies()" aria-label="Accepter les cookies">Accepter</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Gestion des cookies RGPD
+        function showCookieBanner() {
+            const banner = document.getElementById('cookieBanner');
+            banner.classList.add('show');
+            banner.focus();
+        }
+
+        function hideCookieBanner() {
+            document.getElementById('cookieBanner').classList.remove('show');
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            hideCookieBanner();
+        }
+
+        function rejectCookies() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            hideCookieBanner();
+        }
+
+        // Vérifier si l'utilisateur a déjà fait un choix
+        window.addEventListener('DOMContentLoaded', function() {
+            const consent = localStorage.getItem('cookieConsent');
+            if (!consent) {
+                setTimeout(showCookieBanner, 1000);
+            }
+        });
+
+        // Fonction pour afficher la politique de confidentialité
+        function showPrivacyPolicy() {
+            alert('Politique de confidentialité\n\n' +
+                  'Belezzalexia s\'engage à protéger vos données personnelles.\n\n' +
+                  'Collecte de données :\n' +
+                  '- Nous collectons uniquement les données nécessaires à la prise de rendez-vous (nom, prénom, email, téléphone).\n' +
+                  '- Vos données ne sont jamais partagées avec des tiers.\n\n' +
+                  'Droits RGPD :\n' +
+                  '- Droit d\'accès, de rectification et de suppression de vos données\n' +
+                  '- Droit à la portabilité de vos données\n' +
+                  '- Droit d\'opposition au traitement\n\n' +
+                  'Contact : contact@belezzalexia.fr\n\n' +
+                  'Pour exercer vos droits, contactez-nous par email.');
+        }
+
+        // Amélioration accessibilité : Navigation au clavier pour les cartes
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    this.classList.toggle('active');
+                }
+            });
+        });
+
+        // Scroll fluide pour les ancres
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        // Focus sur l'élément pour l'accessibilité
+                        target.setAttribute('tabindex', '-1');
+                        target.focus();
+                    }
+                }
+            });
+        });
+    </script>
+
+    <!-- Schema.org pour le SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BeautySalon",
+        "name": "Belezzalexia",
+        "image": "https://www.belezzalexia.fr/images/dessin2.jpg",
+        "description": "Salon de beauté à Castres spécialisé en pose américaine, extensions de cils volume russe et maquillage permanent",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "17 Rue des Boursières",
+            "addressLocality": "Castres",
+            "postalCode": "81100",
+            "addressCountry": "FR"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "43.6051",
+            "longitude": "2.2401"
+        },
+        "url": "https://www.belezzalexia.fr",
+        "telephone": "+33123456789",
+        "email": "contact@belezzalexia.fr",
+        "priceRange": "€€",
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Tuesday", "Wednesday"],
+                "opens": "10:00",
+                "closes": "18:30"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Thursday", "Friday"],
+                "opens": "10:00",
+                "closes": "19:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "09:30",
+                "closes": "16:00"
+            }
+        ],
+        "sameAs": [
+            "https://www.facebook.com/VotrePageBelezzalexia",
+            "https://www.instagram.com/VotreCompteBelezzalexia"
+        ]
+    }
+    </script>
 </body>
 </html>
