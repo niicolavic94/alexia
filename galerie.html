@@ -4,45 +4,200 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Galerie | Belezzalexia - Réalisations beauté à Castres</title>
-  <meta name="description" content="Découvrez les réalisations de Belezzalexia : manucures, extensions de cils et maquillage permanent.">
+  <meta name="description" content="Découvrez les réalisations de Belezzalexia : manucures, extensions de cils et maquillage permanent, réalisées à Castres avec soin et passion.">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* --- Styles spécifiques à la galerie (tu peux les déplacer dans style.css) --- */
+    .gallery-header {
+      text-align: center;
+      padding: 50px 20px 20px;
+    }
+
+    .gallery-header h1 {
+      font-size: 2.2em;
+      color: #b38b59;
+      margin-bottom: 10px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .gallery-header p {
+      color: #555;
+      font-size: 1.1em;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    }
+
+    .service-section {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .service-section h2 {
+      font-size: 1.8em;
+      color: #333;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .service-section p {
+      max-width: 700px;
+      margin: 0 auto 20px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .back-home {
+      display: block;
+      text-align: center;
+      margin: 30px auto 50px;
+      background-color: #b38b59;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      width: fit-content;
+    }
+
+    .back-home:hover {
+      background-color: #9c7644;
+    }
+
+
+
+    
+
+    /* Responsive : petit ajustement mobile */
+    @media (max-width: 600px) {
+      .gallery-header h1 { font-size: 1.8em; }
+      .gallery-header p { font-size: 1em; }
+    }
+  </style>
 </head>
+
 <body>
-  <header class="header">
+  <!-- Header -->
+  <header class="header" role="banner">
     <div class="logo-area">
       <img src="images/dessin2.jpg" alt="Logo Belezzalexia" class="logo">
       <span class="brand-name">Belezzalexia</span>
     </div>
-    <nav><a href="index.html" class="nav-button">Accueil</a></nav>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-button">Accueil</a>
+    </nav>
   </header>
 
-  <main class="container">
-    <h1>Galerie de réalisations</h1>
-    <p>Quelques exemples du travail d’Alexia : précision, élégance et harmonie.</p>
-    <div class="gallery-grid">
-      <img src="images/americaine.jpg" alt="Pose américaine sur ongles">
-      <img src="images/cils.jpg" alt="Extension de cils volume russe">
-      <img src="images/pro.jpg" alt="Maquillage permanent des sourcils">
-    </div>
+  <!-- Contenu principal -->
+  <main>
+    <section class="gallery-header">
+      <h1>Galerie de réalisations</h1>
+      <p>Découvrez quelques-unes des créations signées Alexia : des prestations sur mesure alliant précision, élégance et bien-être.</p>
+    </section>
+<section id="instagram" class="container">
+  <h2>Suivez @Belezzalexia sur Instagram</h2>
+ 
+
+  <!-- Widget Instagram -->
+  <div class="insta-widget">
+    <iframe 
+      src="https://cdn.lightwidget.com/widgets/TON_WIDGET_ID.html"
+      scrolling="no"
+      allowtransparency="true"
+      class="lightwidget-widget"
+      style="width:100%;border:0;overflow:hidden;">
+    </iframe>
+    <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+  </div>
+
+  <p style="margin-top: 10px;">
+    <a href="https://www.instagram.com/VotreCompteBelezzalexia" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="nav-button">
+       Voir plus sur Instagram
+    </a>
+  </p>
+</section>
+
+
+
+
+
+
+    <!-- Section Pose Américaine -->
+    <section class="service-section">
+      <h2>Pose Américaine</h2>
+      <p>Des ongles parfaitement structurés pour une tenue longue durée et un rendu naturel.</p>
+      <div class="gallery-grid">
+        <img src="images/americaine1.jpg" alt="Pose américaine naturelle sur ongles">
+        <img src="images/americaine2.jpg" alt="Pose américaine nude">
+      </div>
+    </section>
+
+    <!-- Section Extensions de Cils -->
+    <section class="service-section">
+      <h2>Extensions de Cils</h2>
+      <p>Un regard sublimé grâce à des extensions légères, harmonieuses et confortables.</p>
+      <div class="gallery-grid">
+        <img src="images/cils1.jpg" alt="Extension de cils volume russe">
+        <img src="images/cils2.jpg" alt="Extension de cils effet naturel">
+      </div>
+    </section>
+
+    <!-- Section Maquillage Permanent -->
+    <section class="service-section">
+      <h2>Maquillage Permanent</h2>
+      <p>Redéfinissez vos sourcils, lèvres ou eyeliner pour un rendu impeccable en toute circonstance.</p>
+      <div class="gallery-grid">
+        <img src="images/maquillage1.jpg" alt="Maquillage permanent des sourcils poudrés">
+        <img src="images/maquillage2.jpg" alt="Maquillage permanent lèvres naturelles">
+      </div>
+    </section>
+
+    <a href="reservation.html" class="back-home">Réserver une prestation</a>
   </main>
 
- <footer class="footer" role="contentinfo">
-  <div class="brand-name">Belezzalexia</div>
-  <div class="social-icons">
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="brand-name">Belezzalexia</div>
+    <div class="social-icons">
       <a href="https://www.facebook.com/VotrePageBelezzalexia" target="_blank" rel="noopener" aria-label="Facebook">
-          <img src="images/facebook.png" alt="" class="social-icon-img" aria-hidden="true">
+        <img src="images/facebook.png" alt="" class="social-icon-img" aria-hidden="true">
       </a>
       <a href="https://www.instagram.com/VotreCompteBelezzalexia" target="_blank" rel="noopener" aria-label="Instagram">
-          <img src="images/instagram.png" alt="" class="social-icon-img" aria-hidden="true">
+        <img src="images/instagram.png" alt="" class="social-icon-img" aria-hidden="true">
       </a>
-  </div>
-  <p style="margin-top: 15px; font-size: 0.9em;">
+    </div>
+    <p style="margin-top: 15px; font-size: 0.9em;">
       <a href="mentions-legales.html" style="color: white; text-decoration: underline;">Mentions légales</a> | 
       <a href="politique-confidentialite.html" style="color: white; text-decoration: underline;">Politique de confidentialité</a> | 
       <a href="cookies.html" style="color: white; text-decoration: underline;">Cookies</a>
-  </p>
-  <p style="margin-top: 10px; font-size: 0.85em;">© 2025 Belezzalexia - Tous droits réservés</p>
-</footer>
-
+    </p>
+    <p style="margin-top: 10px; font-size: 0.85em;">© 2025 Belezzalexia - Tous droits réservés</p>
+  </footer>
 </body>
 </html>

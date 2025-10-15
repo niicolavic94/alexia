@@ -4,59 +4,148 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Réservation | Belezzalexia - Prenez rendez-vous à Castres</title>
-  <meta name="description" content="Réservez votre séance beauté chez Belezzalexia à Castres : pose américaine, cils, maquillage permanent.">
+  <meta name="description" content="Réservez votre séance beauté chez Belezzalexia à Castres : manucure, extension de cils, maquillage permanent.">
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    .contact-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.contact-form label {
+  font-weight: 600;
+  text-align: left;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #d4a373;
+}
+
+.contact-form button {
+  margin-top: 1rem;
+  align-self: center;
+  background-color: #d4a373;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 25px;
+  padding: 0.8rem 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #c48c5a;
+}
+
+.form-note {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 1rem;
+}
+
+  </style>
 </head>
+
 <body>
+  <!-- Header -->
   <header class="header">
     <div class="logo-area">
       <img src="images/dessin2.jpg" alt="Logo Belezzalexia" class="logo">
       <span class="brand-name">Belezzalexia</span>
     </div>
-    <nav><a href="index.html" class="nav-button">Accueil</a></nav>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">ACCUEIL</a></li>
+        <li><a href="index.html#services-section">SERVICES</a></li>
+        <li><a href="galerie.html">GALERIE</a></li>
+        <li><a href="index.html#testimonials-section">AVIS</a></li>
+        <li><a href="reservation.html" class="active">RÉSERVATION</a></li>
+        <li><a href="index.html#contact-section">CONTACT</a></li>
+      </ul>
+    </nav>
   </header>
 
+  <!-- Section principale -->
   <main class="container">
     <h1>Réservez votre moment beauté</h1>
-    <p>Pour prendre rendez-vous, remplissez le formulaire ci-dessous ou contactez-nous directement :</p>
-    <p><strong>Téléphone :</strong> <a href="tel:+33123456789">01 23 45 67 89</a><br>
-       <strong>Email :</strong> <a href="mailto:contact@belezzalexia.fr">contact@belezzalexia.fr</a></p>
+    <p>Choisissez votre prestation et envoyez votre demande de réservation. Alexia vous recontactera rapidement pour confirmer le créneau idéal.</p>
 
-    <form class="contact-form">
-      <label for="name">Nom complet</label>
-      <input type="text" id="name" name="name" required>
+    <div class="contact-options">
+      <p><strong>Téléphone :</strong> <a href="tel:+33612345678">06 12 34 56 78</a><br>
+         <strong>Email :</strong> <a href="mailto:contact@belezzalexia.fr">contact@belezzalexia.fr</a></p>
+      <p>Ou réservez directement via le formulaire ci-dessous :</p>
+    </div>
 
-      <label for="service">Service souhaité</label>
-      <select id="service" name="service">
+    <!-- Formulaire de réservation -->
+    <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+      <label for="name">Nom complet *</label>
+      <input type="text" id="name" name="name" placeholder="Votre nom et prénom" required>
+
+      <label for="email">Adresse email *</label>
+      <input type="email" id="email" name="email" placeholder="exemple@mail.com" required>
+
+      <label for="phone">Numéro de téléphone *</label>
+      <input type="tel" id="phone" name="phone" placeholder="06 12 34 56 78" required>
+
+      <label for="service">Service souhaité *</label>
+      <select id="service" name="service" required>
+        <option value="" disabled selected>Choisissez une prestation</option>
         <option>Pose américaine</option>
         <option>Extension de cils</option>
         <option>Maquillage permanent</option>
+        <option>Autre / Conseil</option>
       </select>
 
       <label for="message">Message (facultatif)</label>
-      <textarea id="message" name="message" rows="4"></textarea>
+      <textarea id="message" name="message" rows="4" placeholder="Indiquez vos disponibilités ou préférences..."></textarea>
 
       <button type="submit" class="nav-button">Envoyer la demande</button>
     </form>
+
+    <p class="form-note">* Tous les champs marqués d’un astérisque sont obligatoires.</p>
   </main>
 
-<footer class="footer" role="contentinfo">
-  <div class="brand-name">Belezzalexia</div>
-  <div class="social-icons">
-      <a href="https://www.facebook.com/VotrePageBelezzalexia" target="_blank" rel="noopener" aria-label="Facebook">
-          <img src="images/facebook.png" alt="" class="social-icon-img" aria-hidden="true">
-      </a>
-      <a href="https://www.instagram.com/VotreCompteBelezzalexia" target="_blank" rel="noopener" aria-label="Instagram">
-          <img src="images/instagram.png" alt="" class="social-icon-img" aria-hidden="true">
-      </a>
-  </div>
-  <p style="margin-top: 15px; font-size: 0.9em;">
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="brand-name">Belezzalexia</div>
+    <div class="social-icons">
+        <a href="https://www.facebook.com/VotrePageBelezzalexia" target="_blank" rel="noopener" aria-label="Facebook">
+            <img src="images/facebook.png" alt="" class="social-icon-img" aria-hidden="true">
+        </a>
+        <a href="https://www.instagram.com/VotreCompteBelezzalexia" target="_blank" rel="noopener" aria-label="Instagram">
+            <img src="images/instagram.png" alt="" class="social-icon-img" aria-hidden="true">
+        </a>
+    </div>
+    <p style="margin-top: 15px; font-size: 0.9em;">
       <a href="mentions-legales.html" style="color: white; text-decoration: underline;">Mentions légales</a> | 
       <a href="politique-confidentialite.html" style="color: white; text-decoration: underline;">Politique de confidentialité</a> | 
       <a href="cookies.html" style="color: white; text-decoration: underline;">Cookies</a>
-  </p>
-  <p style="margin-top: 10px; font-size: 0.85em;">© 2025 Belezzalexia - Tous droits réservés</p>
-</footer>
-
+    </p>
+    <p style="margin-top: 10px; font-size: 0.85em;">© 2025 Belezzalexia - Tous droits réservés</p>
+  </footer>
 </body>
 </html>
